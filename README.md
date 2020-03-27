@@ -30,3 +30,13 @@ Make sure to read through the code before continuing on!
 ## Part Three - Gotchas
 - Make sure this works only if you click on two different cards — clicking the same card twice shouldn’t count as a match!)
 - Make sure that you can not click too quickly and guess more than two cards at a time.
+
+## Bonus Task
+
+You can find a 30 second video demo of a possible solution [here](https://drive.google.com/file/d/1HeBfQe-AGnFGL8YmEt2wnfEwnNL0abFJ/view)
+- Add a button that when clicked will start the game
+- Add a button that when clicked will restart the game once it has ended
+- For every guess made, increment a score variable and display the score while the game is played
+- Store the lowest-scoring game in local storage, so that players can see a record of the best game played.
+- Allow for any number of cards to appear
+- Instead of hard-coding colors, try something different like random colors or even images!
