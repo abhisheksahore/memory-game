@@ -10,6 +10,8 @@ If not, the cards should remain displayed to the player for one second, and then
 
 The goal of the game is to match up all the pairs.
 
+A demo with the starter code is [here](https://drive.google.com/file/d/15ZgaBsBQxwwghvcPASgikroU9BVxCraa/view?usp=sharing)
+
 
 ## Part One - Reading the code
 Take a look at the starter code provided.
