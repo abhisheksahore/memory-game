@@ -1,7 +1,75 @@
  #game div {
   border: 1px solid black;
-  width: 15%;
+  width: 200px;
   height: 200px;
   margin: 10px;
   display: inline-block;
+  cursor: pointer;
 } 
+
+
+
+.red
+{
+  background-color: red;
+}
+.blue
+{
+  background-color: blue;
+}
+.green
+{
+  background-color: green;
+}
+.orange
+{
+  background-color: orange;
+}
+.purple
+{
+  background-color: purple;
+}
+.red
+{
+  background-color: red;
+}
+.blue
+{
+  background-color: blue;
+}
+.green
+{
+  background-color: green;
+}
+.orange
+{
+  background-color: orange;
+}
+.purple
+{
+  background-color: purple;
+}
+
+
+.invisible {
+  background-color: transparent;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.btn-container {
+  display: flex;
+
+}
+.btn {
+  padding: .7rem 1.7rem;
+  background-color: rgb(192, 192, 192);
+  border-radius: 20px;
+  cursor: pointer;
+}
