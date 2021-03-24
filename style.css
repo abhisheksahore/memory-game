@@ -24,7 +24,14 @@ h1 {
   color: rgb(255, 47, 20);
   position: relative;
   text-shadow: 8px 8px 30px rgb(255, 183, 0);
+  animation: text-shadow-ani 2s infinite;
 }
+
+
+@keyframes text-shadow-ani {
+  50% {text-shadow: 4px 4px 20px rgb(255, 183, 0);}
+}
+
 
 a {
   text-decoration: none;
