@@ -166,9 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
                   localStorage.setItem('best_score', score.toString());
                 }
                 best_score.innerHTML = localStorage.getItem('best_score');
+              } else {
+                best_score.innerHTML = score;
+                localStorage.setItem('best_score', score.toString());
+                
               }
-              best_score.innerHTML = score;
-              localStorage.setItem('best_score', score.toString());
             }
           } else {
             token = false;
