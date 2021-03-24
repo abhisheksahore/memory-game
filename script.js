@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             first = 0;
             second = 0;
             counter++;
-            if (counter === 1) {
+            if (counter === 12) {
               // over.innerText = `game over!`
               your_score.innerText = score;
               over_container.classList.remove('hidden');
@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   
   quit_btn.addEventListener('click', function() {
+    
     over_container.classList.add('hidden');
     reset_game();
 
