@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.querySelector('audio');
   const gameContainer = document.getElementById("game");
   const reset_btn = document.getElementById("reset");
   const new_div_inner = document.getElementsByClassName('new-div-inner');
   // const score_text = document.getElementsByClassName('score-text');
   const best_score = document.getElementById('best-score');
-
+  const upper = document.getElementById('upper');
+  const quit_btn = document.querySelector('.quit-btn');
   const over = document.querySelector('.over');
   const ok_btn = document.querySelector('.ok-btn');
   const over_container = document.querySelector('.over-container');
-
+  const your_score = document.querySelector('#your-score');
+  const start = document.querySelector('.start');
   const COLORS = [
     "card-1",
     "card-2",
@@ -84,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
       front.id = `id_${counter_id}`;
       counter_id++;
       // front.classList.add('invisible');
-
-
+      
+      
       newDiv.addEventListener('click', handleCardClick);
       
       // giving back class to back div element.
@@ -98,10 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
       newDiv.append(newDivInner);
       gameContainer.append(newDiv);
     }
-
-  
+    
+    
   }
-
+  
   let first = 0;
   let first_el = 0;
   let second = 0;
@@ -110,23 +113,23 @@ document.addEventListener('DOMContentLoaded', function() {
   let token = true;
   let target = 0;
   let counter = 0;
-
-
-
-
+  
+  
+  
+  
   /*************************************************************************************************
    *          handleCardClick() handles the click on the card and checks if the card is            *
    *          invisible, and if it is then it make it visible and then check if both the           *
    *          cards are same or not.   This                                                        *
    ************************************************************************************************/
-
+  
   function handleCardClick(e) {
     console.log(e.target.dataset.status !== 'pending');
     console.log(e.target.dataset.status !== 'done');
     target = e.target.parentElement.querySelector('.front');
     // console.log(e.target);
     // console.log(target);
-
+    
     if (token === true && target.dataset.status !== 'pending' && target.dataset.status !== 'done') {
       if (!target.parentElement.classList.contains("visible")){
         target.parentElement.classList.add('visible');
@@ -148,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (second) {
           if (first === second) {
             // console.log(true);
-              
-                
+            
+            
             first_el.dataset.status = 'done';
             second_el.dataset.status = 'done';
             console.log(first_el);
@@ -157,10 +160,11 @@ document.addEventListener('DOMContentLoaded', function() {
             first = 0;
             second = 0;
             counter++;
-            if (counter === 12) {
-              over.innerText = `game over!`
+            if (counter === 1) {
+              // over.innerText = `game over!`
+              your_score.innerText = score;
               over_container.classList.remove('hidden');
-
+              
               if (localStorage.length !== 0) {
                 if (score < parseInt(localStorage.getItem('best_score'))) {
                   localStorage.setItem('best_score', score.toString());
@@ -192,23 +196,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       } 
       // else {
-      //   e.target.classList.add('invisible');
-      //   first = 0;
-      //   second = 0;
-      //   console.log('first is ', first)
-      //   console.log('second is', second)
-      // }
+        //   e.target.classList.add('invisible');
+        //   first = 0;
+        //   second = 0;
+        //   console.log('first is ', first)
+        //   console.log('second is', second)
+        // }
+      }
+      
+      
     }
-
-
-  }
-
-  // when the DOM loads
-  createDivsForColors(shuffledColors);
-  const score_container = document.createElement('div');
-  const score_title = document.createElement('div');
-  const score_text = document.createElement('div');
-  score_container.classList.add('score');
+    
+    // when the DOM loads
+    createDivsForColors(shuffledColors);
+    const score_container = document.createElement('div');
+    const score_title = document.createElement('div');
+    const score_text = document.createElement('div');
+    score_container.classList.add('score');
   score_title.classList.add('score-title');
   score_title.innerText = 'Score';
   score_text.classList.add('score-text');
@@ -216,14 +220,15 @@ document.addEventListener('DOMContentLoaded', function() {
   score_container.append(score_title);
   score_container.append(score_text);
   gameContainer.insertBefore(score_container, gameContainer.childNodes[12]);
-
+  
   if (localStorage.length !== 0) {
     
     best_score.innerHTML = localStorage.getItem('best_score');
   }
-
+  
   const reset_game = () => {
     
+    audio.play();
     //  Make every card invisible and remove data-status attribute 
     console.log(new_div_inner);
     for (let i = 0; i < new_div_inner.length; i++) {
@@ -235,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     // Resetting variables.
-
+    
     first = 0;
     first_id = 0;
     second = 0; 
@@ -247,13 +252,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
+  
   ok_btn.addEventListener('click', function() {
     over_container.classList.add('hidden');
     reset_game();
   });
-
+  
   reset_btn.addEventListener('click', function() {
     reset_game();
   })
+  
+  quit_btn.addEventListener('click', function() {
+    over_container.classList.add('hidden');
+    reset_game();
 
+  })
+
+  start.addEventListener('click', function() {
+    audio.play();
+  })
+  
 })

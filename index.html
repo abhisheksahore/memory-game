@@ -10,15 +10,28 @@
   <title>Memory Game</title>
 </head>
 <body>
+  <audio src="./sounds/click.wav"></audio>
   <div class="over-container hidden">
     <div class="over">
-
+      
+      Game Over!
+      <div class="your-score">
+        Your score: <span id="your-score"></span>
+      </div>
+      <div class="pop-btn-cont">
+        <div class="btn ok-btn">
+          Play again
+        </div>   
+        <a href="#upper">
+          <div class="btn quit-btn" >
+            Quit
+          </div>
+        </a>
+      </div>
     </div> 
-    <div class="btn ok-btn">
-      Play again
-    </div>   
+    
   </div>
-  <div class="container">
+  <div id="upper" class="container">
     <div class="heading-container">
       <h1>Memory Game!</h1>
       <a href="#game">
