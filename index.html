@@ -10,9 +10,23 @@
   <title>Memory Game</title>
 </head>
 <body>
+  <div class="over-container hidden">
+    <div class="over">
+
+    </div> 
+    <div class="btn ok-btn">
+      Play again
+    </div>   
+  </div>
   <div class="container">
-    <h1>Memory Game!</h1>
-    <div id="game"></div>
+    <div class="heading-container">
+      <h1>Memory Game!</h1>
+      <a href="#game">
+        <div class="start btn">Play</div>
+      </a>
+      <div class="best-score">Best Score: <span id="best-score">Play</span></div>
+    </div>
+    <div id="game" class="game-container"></div>
     <div class="btn-container">
       <div id="reset" class="btn">Reset</div>
     </div>
