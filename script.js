@@ -1,4 +1,4 @@
-docuent.addEventListener('load',function() {
+document.addEventListener('DOMContentLoaded', function() {
   const gameContainer = document.getElementById("game");
   const reset_btn = document.getElementById("reset");
   const new_div_inner = document.getElementsByClassName('new-div-inner');

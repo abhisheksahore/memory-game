@@ -189,6 +189,7 @@ h1 {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   margin: 0;
+  /* animation: spin 4s linear infinite; */
 }
 .front {
   border: 10px solid rgb(250, 192, 46);
